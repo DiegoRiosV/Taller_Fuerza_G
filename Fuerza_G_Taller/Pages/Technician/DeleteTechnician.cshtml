@@ -1,0 +1,14 @@
+﻿@page "{id:int}"
+@model Fuerza_G_Taller.Pages.Technician.DeleteTechnician
+@{
+    ViewData["Title"] = "Eliminar Técnico";
+}
+
+<h1>Eliminar Técnico</h1>
+
+<p>¿Seguro que quieres eliminar el técnico: <strong>@Model.Technician.Name</strong>?</p>
+
+<form method="post">
+    <button type="submit">Sí, eliminar</button>
+    <a asp-page="IndexTechnician">Cancelar</a>
+</form>

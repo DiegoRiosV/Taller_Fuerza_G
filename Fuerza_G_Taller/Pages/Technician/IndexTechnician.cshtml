@@ -1,0 +1,46 @@
+﻿@page
+@model Fuerza_G_Taller.Pages.Technician.IndexTechnician
+@{
+    ViewData["Title"] = "Técnicos";
+}
+
+<h1>Técnicos</h1>
+
+<a asp-page="CreateTechnician">Agregar Técnico</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Documento</th>
+            <th>Dirección</th>
+            <th>Salario Base</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tech in Model.Technicians)
+        {
+            <tr>
+                <td>@tech.Id</td>
+                <td>@tech.Name</td>
+                <td>@tech.FirstLastName</td>
+                <td>@tech.SecondLastName</td>
+                <td>@tech.PhoneNumber</td>
+                <td>@tech.Email</td>
+                <td>@tech.DocumentNumber</td>
+                <td>@tech.Address</td>
+                <td>@tech.BaseSalary</td>
+                <td>
+                    <a asp-page="EditTechnician" asp-route-id="@tech.Id">Editar</a> |
+                    <a asp-page="DeleteTechnician" asp-route-id="@tech.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
