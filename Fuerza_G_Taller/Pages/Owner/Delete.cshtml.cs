@@ -1,12 +1,35 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using OwnerEntity = Fuerza_G_Taller.Models.Owner;
+using Fuerza_G_Taller.Repositories;
 
-namespace Fuerza_G_Taller.Pages.Model
+namespace Fuerza_G_Taller.Pages.Owner
 {
     public class DeleteModel : PageModel
     {
-        public void OnGet()
+        private readonly OwnerRepository _repository;
+
+        public DeleteModel(OwnerRepository repository)
         {
+            _repository = repository;
+        }
+
+        [BindProperty]
+        public OwnerEntity Owner { get; set; } = new OwnerEntity();
+
+        public IActionResult OnGet(int id)
+        {
+            var ownerEntity = _repository.GetById(id);
+            if (ownerEntity == null) return RedirectToPage("Index");
+
+            Owner = ownerEntity;
+            return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+            _repository.Delete(Owner.Id);
+            return RedirectToPage("Index");
         }
     }
 }

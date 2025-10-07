@@ -1,4 +1,14 @@
-﻿@page
-@model Fuerza_G_Taller.Pages.Model.DeleteModel
+﻿@page "{id:int}"
+@model Fuerza_G_Taller.Pages.Owner.DeleteModel
 @{
+    ViewData["Title"] = "Eliminar Propietario";
 }
+
+<h1>Eliminar Propietario</h1>
+
+<p>¿Seguro que quieres eliminar al propietario: <strong>@Model.Owner.Name @Model.Owner.FirstLastName</strong>?</p>
+
+<form method="post">
+    <button type="submit">Sí, eliminar</button>
+    <a asp-page="Index">Cancelar</a>
+</form>
