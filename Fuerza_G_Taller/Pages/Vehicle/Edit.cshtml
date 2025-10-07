@@ -1,4 +1,37 @@
-﻿@page
-@model Fuerza_G_Taller.Pages.Model.EditModel
+﻿@page "{id:int}"
+@model Fuerza_G_Taller.Pages.Vehicle.EditModel
 @{
+    ViewData["Title"] = "Editar Vehículo";
 }
+
+<h1>Editar Vehículo</h1>
+
+<form method="post">
+    <div>
+        <label>Placa:</label>
+        <input asp-for="Vehicle.Plate" />
+    </div>
+    <div>
+        <label>Modelo:</label>
+        <select asp-for="Vehicle.ModelId" asp-items="Model.ModelsSelectList"></select>
+    </div>
+    <div>
+        <label>Propietario:</label>
+        <select asp-for="Vehicle.OwnerId" asp-items="Model.OwnersSelectList"></select>
+    </div>
+    <div>
+        <label>Año:</label>
+        <input asp-for="Vehicle.Year" />
+    </div>
+    <div>
+        <label>Color:</label>
+        <input asp-for="Vehicle.Color" />
+    </div>
+    <div>
+        <label>Tipo:</label>
+        <input asp-for="Vehicle.Type" />
+    </div>
+    <button type="submit">Guardar</button>
+</form>
+
+<a asp-page="Index">Volver</a>
