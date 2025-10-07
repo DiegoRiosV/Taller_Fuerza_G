@@ -1,0 +1,40 @@
+﻿@page
+@model Fuerza_G_Taller.Pages.Technician.CreateTechnician
+@{
+    ViewData["Title"] = "Agregar Técnico";
+}
+
+<h1>Agregar Técnico</h1>
+
+<form method="post">
+    <div>
+        <label>Nombre:</label>
+        <input asp-for="Technician.Name" />
+    </div>
+    <div>
+        <label>Primer Apellido:</label>
+        <input asp-for="Technician.FirstLastName" />
+    </div>
+    <div>
+        <label>Segundo Apellido:</label>
+        <input asp-for="Technician.SecondLastName" />
+    </div>
+    <div>
+        <label>Teléfono:</label>
+        <input asp-for="Technician.PhoneNumber" />
+    </div>
+    <div>
+        <label>Email:</label>
+        <input asp-for="Technician.Email" />
+    </div>
+    <div>
+        <label>Documento:</label>
+        <input asp-for="Technician.DocumentNumber" />
+    </div>
+    <div>
+        <label>Dirección:</label>
+        <input asp-for="Technician.Address" />
+    </div>
+    <div>
+        <label>Salario Base:</label>
+        <input asp-for="Technician.BaseSalary" />
