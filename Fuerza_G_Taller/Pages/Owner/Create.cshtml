@@ -1,4 +1,41 @@
 ﻿@page
-@model Fuerza_G_Taller.Pages.Model.CreateModel
+@model Fuerza_G_Taller.Pages.Owner.CreateModel
 @{
+    ViewData["Title"] = "Agregar Propietario";
 }
+
+<h1>Agregar Propietario</h1>
+
+<form method="post">
+    <div>
+        <label>Nombre:</label>
+        <input asp-for="Owner.Name" />
+    </div>
+    <div>
+        <label>Primer Apellido:</label>
+        <input asp-for="Owner.FirstLastName" />
+    </div>
+    <div>
+        <label>Segundo Apellido:</label>
+        <input asp-for="Owner.SecondLastName" />
+    </div>
+    <div>
+        <label>Teléfono:</label>
+        <input asp-for="Owner.PhoneNumber" />
+    </div>
+    <div>
+        <label>Email:</label>
+        <input asp-for="Owner.Email" />
+    </div>
+    <div>
+        <label>Documento:</label>
+        <input asp-for="Owner.DocumentNumber" />
+    </div>
+    <div>
+        <label>Dirección:</label>
+        <input asp-for="Owner.Address" />
+    </div>
+    <button type="submit">Guardar</button>
+</form>
+
+<a asp-page="Index">Volver</a>
