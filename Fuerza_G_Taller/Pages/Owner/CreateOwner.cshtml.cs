@@ -5,11 +5,11 @@ using Fuerza_G_Taller.Repositories;
 
 namespace Fuerza_G_Taller.Pages.Owner
 {
-    public class CreateModel : PageModel
+    public class CreateOwner : PageModel
     {
         private readonly OwnerRepository _repository;
 
-        public CreateModel(OwnerRepository repository)
+        public CreateOwner(OwnerRepository repository)
         {
             _repository = repository;
         }
@@ -17,17 +17,18 @@ namespace Fuerza_G_Taller.Pages.Owner
         [BindProperty]
         public OwnerEntity Owner { get; set; } = new OwnerEntity();
 
-        public IActionResult OnGet()
+        public void OnGet()
         {
-            return Page();
+            // No se necesita lógica por ahora
         }
 
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid) return Page();
+            if (!ModelState.IsValid)
+                return Page();
 
             _repository.Add(Owner);
-            return RedirectToPage("Index");
+            return RedirectToPage("IndexOwner");
         }
     }
 }

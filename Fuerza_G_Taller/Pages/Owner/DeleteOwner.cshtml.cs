@@ -5,11 +5,11 @@ using Fuerza_G_Taller.Repositories;
 
 namespace Fuerza_G_Taller.Pages.Owner
 {
-    public class DeleteModel : PageModel
+    public class DeleteOwner : PageModel
     {
         private readonly OwnerRepository _repository;
 
-        public DeleteModel(OwnerRepository repository)
+        public DeleteOwner(OwnerRepository repository)
         {
             _repository = repository;
         }

@@ -1,13 +1,13 @@
 ﻿@page
 @using Fuerza_G_Taller.Pages.Vehicle
-@model IndexModel
+@model IndexVehicle
 @{
     ViewData["Title"] = "Vehículos";
 }
 
 <h1>Vehículos</h1>
 
-<a asp-page="Create">Agregar Vehículo</a>
+<a asp-page="CreateVehicle">Agregar Vehículo</a>
 
 <table>
     <thead>
@@ -34,8 +34,8 @@
                 <td>@vehicleItem.Color</td>
                 <td>@vehicleItem.Type</td>
                 <td>
-                    <a asp-page="Edit" asp-route-id="@vehicleItem.Id">Editar</a> |
-                    <a asp-page="Delete" asp-route-id="@vehicleItem.Id">Eliminar</a>
+                    <a asp-page="EditVehicle" asp-route-id="@vehicleItem.Id">Editar</a> |
+                    <a asp-page="DeleteVehicle" asp-route-id="@vehicleItem.Id">Eliminar</a>
                 </td>
             </tr>
         }

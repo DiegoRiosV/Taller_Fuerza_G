@@ -1,10 +1,10 @@
-﻿@page
-@model Fuerza_G_Taller.Pages.Brand.CreateModel
+﻿@page "{id:int}"
+@model Fuerza_G_Taller.Pages.Brand.EditModel
 @{
-    ViewData["Title"] = "Agregar Marca";
+    ViewData["Title"] = "Editar Marca";
 }
 
-<h1>Agregar Marca</h1>
+<h1>Editar Marca</h1>
 
 <form method="post">
     <div>
@@ -14,4 +14,4 @@
     <button type="submit">Guardar</button>
 </form>
 
-<a asp-page="Index">Volver</a>
+<a asp-page="IndexModel">Volver</a>

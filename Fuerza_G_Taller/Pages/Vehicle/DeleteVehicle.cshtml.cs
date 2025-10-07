@@ -5,11 +5,11 @@ using Fuerza_G_Taller.Repositories;
 
 namespace Fuerza_G_Taller.Pages.Vehicle
 {
-    public class DeleteModel : PageModel
+    public class DeleteVehicle : PageModel
     {
         private readonly VehicleRepository _vehicleRepository;
 
-        public DeleteModel(VehicleRepository vehicleRepository)
+        public DeleteVehicle(VehicleRepository vehicleRepository)
         {
             _vehicleRepository = vehicleRepository;
         }

@@ -1,28 +1,32 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Fuerza_G_Taller.Models;
-using BrandModel = Fuerza_G_Taller.Models.Brand;
+using ModelEntity = Fuerza_G_Taller.Models.Model;
 using Fuerza_G_Taller.Repositories;
 
-namespace Fuerza_G_Taller.Pages.Brand
+namespace Fuerza_G_Taller.Pages.Model
 {
     public class CreateModel : PageModel
     {
-        private readonly BrandRepository _repository;
+        private readonly ModelRepository _repository;
 
-        public CreateModel(BrandRepository repository)
+        public CreateModel(ModelRepository repository)
         {
             _repository = repository;
         }
 
         [BindProperty]
-        public BrandModel Brand { get; set; } = new BrandModel();
+        public ModelEntity Model { get; set; } = new ModelEntity();
+
+        public void OnGet()
+        {
+            // Nada que cargar
+        }
 
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid) return Page();
 
-            _repository.Add(Brand);
+            _repository.Add(Model);
             return RedirectToPage("Index");
         }
     }

@@ -1,12 +1,12 @@
 ﻿@page
-@model Fuerza_G_Taller.Pages.Owner.IndexModel
+@model Fuerza_G_Taller.Pages.Owner.IndexOwner
 @{
     ViewData["Title"] = "Propietarios";
 }
 
 <h1>Propietarios</h1>
 
-<a asp-page="Create">Agregar Propietario</a>
+<a asp-page="CreateOwner">Agregar Propietario</a>
 
 <table>
     <thead>
@@ -35,8 +35,8 @@
                 <td>@ownerItem.DocumentNumber</td>
                 <td>@ownerItem.Address</td>
                 <td>
-                    <a asp-page="Edit" asp-route-id="@ownerItem.Id">Editar</a> |
-                    <a asp-page="Delete" asp-route-id="@ownerItem.Id">Eliminar</a>
+                    <a asp-page="EditOwner" asp-route-id="@ownerItem.Id">Editar</a> |
+                    <a asp-page="DeleteOwner" asp-route-id="@ownerItem.Id">Eliminar</a>
                 </td>
             </tr>
         }

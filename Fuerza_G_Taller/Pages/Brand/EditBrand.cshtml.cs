@@ -6,17 +6,18 @@ using Fuerza_G_Taller.Repositories;
 
 namespace Fuerza_G_Taller.Pages.Brand
 {
-    public class DeleteModel : PageModel
+    public class EditBrand : PageModel
     {
         private readonly BrandRepository _repository;
 
-        public DeleteModel(BrandRepository repository)
+        public EditBrand(BrandRepository repository)
         {
             _repository = repository;
         }
 
         [BindProperty]
         public BrandModel Brand { get; set; } = new BrandModel();
+
 
         public IActionResult OnGet(int id)
         {
@@ -29,7 +30,9 @@ namespace Fuerza_G_Taller.Pages.Brand
 
         public IActionResult OnPost()
         {
-            _repository.Delete(Brand.Id);
+            if (!ModelState.IsValid) return Page();
+
+            _repository.Update(Brand);
             return RedirectToPage("Index");
         }
     }

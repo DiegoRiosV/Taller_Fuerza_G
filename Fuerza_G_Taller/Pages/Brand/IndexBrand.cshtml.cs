@@ -5,11 +5,11 @@ using Fuerza_G_Taller.Repositories;
 
 namespace Fuerza_G_Taller.Pages.Brand
 {
-    public class IndexModel : PageModel
+    public class IndexBrand : PageModel
     {
         private readonly BrandRepository _repository;
 
-        public IndexModel(BrandRepository repository)
+        public IndexBrand(BrandRepository repository)
         {
             _repository = repository;
         }

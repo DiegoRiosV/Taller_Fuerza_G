@@ -4,13 +4,13 @@ using Fuerza_G_Taller.Repositories;
 
 namespace Fuerza_G_Taller.Pages.Vehicle
 {
-    public class IndexModel : PageModel
+    public class IndexVehicle : PageModel
     {
         private readonly VehicleRepository _vehicleRepository;
         private readonly OwnerRepository _ownerRepository;
         private readonly ModelRepository _modelRepository;
 
-        public IndexModel(VehicleRepository vehicleRepository,
+        public IndexVehicle(VehicleRepository vehicleRepository,
                           OwnerRepository ownerRepository,
                           ModelRepository modelRepository)
         {

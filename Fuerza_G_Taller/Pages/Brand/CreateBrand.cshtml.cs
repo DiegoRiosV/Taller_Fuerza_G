@@ -6,11 +6,11 @@ using Fuerza_G_Taller.Repositories;
 
 namespace Fuerza_G_Taller.Pages.Brand
 {
-    public class EditModel : PageModel
+    public class CreateBrand : PageModel
     {
         private readonly BrandRepository _repository;
 
-        public EditModel(BrandRepository repository)
+        public CreateBrand(BrandRepository repository)
         {
             _repository = repository;
         }
@@ -18,21 +18,11 @@ namespace Fuerza_G_Taller.Pages.Brand
         [BindProperty]
         public BrandModel Brand { get; set; } = new BrandModel();
 
-
-        public IActionResult OnGet(int id)
-        {
-            var brand = _repository.GetById(id);
-            if (brand == null) return RedirectToPage("Index");
-
-            Brand = brand;
-            return Page();
-        }
-
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid) return Page();
 
-            _repository.Update(Brand);
+            _repository.Add(Brand);
             return RedirectToPage("Index");
         }
     }

@@ -5,11 +5,11 @@ using Fuerza_G_Taller.Repositories;
 
 namespace Fuerza_G_Taller.Pages.Owner
 {
-    public class EditModel : PageModel
+    public class EditOwner : PageModel
     {
         private readonly OwnerRepository _repository;
 
-        public EditModel(OwnerRepository repository)
+        public EditOwner(OwnerRepository repository)
         {
             _repository = repository;
         }
