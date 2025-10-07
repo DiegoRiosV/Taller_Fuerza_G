@@ -1,0 +1,17 @@
+﻿@page
+@model Fuerza_G_Taller.Pages.Model.CreateModel
+@{
+    ViewData["Title"] = "Agregar Modelo";
+}
+
+<h1>Agregar Modelo</h1>
+
+<form method="post">
+    <div>
+        <label>Nombre:</label>
+        <input asp-for="Model.Name" />
+    </div>
+    <button type="submit">Guardar</button>
+</form>
+
+<a asp-page="IndexModel">Volver</a>

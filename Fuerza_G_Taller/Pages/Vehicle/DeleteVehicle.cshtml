@@ -1,0 +1,14 @@
+﻿@page "{id:int}"
+@model Fuerza_G_Taller.Pages.Vehicle.DeleteVehicle
+@{
+    ViewData["Title"] = "Eliminar Vehículo";
+}
+
+<h1>Eliminar Vehículo</h1>
+
+<p>¿Seguro que quieres eliminar el vehículo con placa: <strong>@Model.Vehicle.Plate</strong>?</p>
+
+<form method="post">
+    <button type="submit">Sí, eliminar</button>
+    <a asp-page="IndexVehicle">Cancelar</a>
+</form>

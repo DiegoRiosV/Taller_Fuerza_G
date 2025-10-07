@@ -1,0 +1,43 @@
+﻿@page
+@using Fuerza_G_Taller.Pages.Vehicle
+@model IndexVehicle
+@{
+    ViewData["Title"] = "Vehículos";
+}
+
+<h1>Vehículos</h1>
+
+<a asp-page="CreateVehicle">Agregar Vehículo</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Placa</th>
+            <th>Modelo</th>
+            <th>Propietario</th>
+            <th>Año</th>
+            <th>Color</th>
+            <th>Tipo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vehicleItem in Model.Vehicles)
+        {
+            <tr>
+                <td>@vehicleItem.Id</td>
+                <td>@vehicleItem.Plate</td>
+                <td>@vehicleItem.ModelName</td>
+                <td>@vehicleItem.OwnerName</td>
+                <td>@vehicleItem.Year</td>
+                <td>@vehicleItem.Color</td>
+                <td>@vehicleItem.Type</td>
+                <td>
+                    <a asp-page="EditVehicle" asp-route-id="@vehicleItem.Id">Editar</a> |
+                    <a asp-page="DeleteVehicle" asp-route-id="@vehicleItem.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

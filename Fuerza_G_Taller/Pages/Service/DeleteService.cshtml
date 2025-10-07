@@ -1,0 +1,14 @@
+﻿@page "{id:int}"
+@model Fuerza_G_Taller.Pages.Service.DeleteServiceModel
+@{
+    ViewData["Title"] = "Eliminar Servicio";
+}
+
+<h1>Eliminar Servicio</h1>
+
+<p>¿Seguro que quieres eliminar el servicio: <strong>@Model.Service.Name</strong>?</p>
+
+<form method="post">
+    <button type="submit">Sí, eliminar</button>
+    <a asp-page="IndexService">Cancelar</a>
+</form>

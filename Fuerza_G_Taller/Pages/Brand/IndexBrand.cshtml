@@ -1,0 +1,32 @@
+﻿@page
+@model Fuerza_G_Taller.Pages.Brand.IndexBrand
+@{
+    ViewData["Title"] = "Marcas";
+}
+
+<h1>Marcas</h1>
+
+<a asp-page="CreateBrand">Agregar Marca</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var brand in Model.Brands)
+        {
+            <tr>
+                <td>@brand.Id</td>
+                <td>@brand.Name</td>
+                <td>
+                    <a asp-page="EditBrand" asp-route-id="@brand.Id">Editar</a> |
+                    <a asp-page="DeleteBrand" asp-route-id="@brand.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,38 @@
+﻿@page
+@model Fuerza_G_Taller.Pages.Service.IndexService
+@{
+    ViewData["Title"] = "Servicios";
+}
+
+<h1>Servicios</h1>
+
+<a asp-page="CreateService">Agregar Servicio</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var service in Model.Services)
+        {
+            <tr>
+                <td>@service.Id</td>
+                <td>@service.Name</td>
+                <td>@service.Type</td>
+                <td>@service.Price</td>
+                <td>@service.Description</td>
+                <td>
+                    <a asp-page="EditService" asp-route-id="@service.Id">Editar</a> |
+                    <a asp-page="DeleteService" asp-route-id="@service.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,44 @@
+﻿@page
+@model Fuerza_G_Taller.Pages.Owner.IndexOwner
+@{
+    ViewData["Title"] = "Propietarios";
+}
+
+<h1>Propietarios</h1>
+
+<a asp-page="CreateOwner">Agregar Propietario</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Documento</th>
+            <th>Dirección</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ownerItem in Model.Owners)
+        {
+            <tr>
+                <td>@ownerItem.Id</td>
+                <td>@ownerItem.Name</td>
+                <td>@ownerItem.FirstLastName</td>
+                <td>@ownerItem.SecondLastName</td>
+                <td>@ownerItem.PhoneNumber</td>
+                <td>@ownerItem.Email</td>
+                <td>@ownerItem.DocumentNumber</td>
+                <td>@ownerItem.Address</td>
+                <td>
+                    <a asp-page="EditOwner" asp-route-id="@ownerItem.Id">Editar</a> |
+                    <a asp-page="DeleteOwner" asp-route-id="@ownerItem.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
