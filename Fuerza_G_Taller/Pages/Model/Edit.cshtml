@@ -1,0 +1,17 @@
+﻿@page "{id:int}"
+@model Fuerza_G_Taller.Pages.Brand.EditModel
+@{
+    ViewData["Title"] = "Editar Marca";
+}
+
+<h1>Editar Marca</h1>
+
+<form method="post">
+    <div>
+        <label>Nombre:</label>
+        <input asp-for="Brand.Name" />
+    </div>
+    <button type="submit">Guardar</button>
+</form>
+
+<a asp-page="Index">Volver</a>

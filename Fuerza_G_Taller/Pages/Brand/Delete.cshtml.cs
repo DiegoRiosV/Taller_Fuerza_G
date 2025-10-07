@@ -1,0 +1,36 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Fuerza_G_Taller.Models;
+using BrandModel = Fuerza_G_Taller.Models.Brand;
+using Fuerza_G_Taller.Repositories;
+
+namespace Fuerza_G_Taller.Pages.Brand
+{
+    public class DeleteModel : PageModel
+    {
+        private readonly BrandRepository _repository;
+
+        public DeleteModel(BrandRepository repository)
+        {
+            _repository = repository;
+        }
+
+        [BindProperty]
+        public BrandModel Brand { get; set; } = new BrandModel();
+
+        public IActionResult OnGet(int id)
+        {
+            var brand = _repository.GetById(id);
+            if (brand == null) return RedirectToPage("Index");
+
+            Brand = brand;
+            return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+            _repository.Delete(Brand.Id);
+            return RedirectToPage("Index");
+        }
+    }
+}
